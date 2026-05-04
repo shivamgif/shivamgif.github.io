@@ -13,7 +13,7 @@ export function ProjectCard({
 }) {
   return (
     <article className="brut-border brut-shadow brut-shadow-hover flex flex-col bg-white odd:-rotate-1 even:rotate-1">
-      <div className="aspect-[4/3] min-h-[280px] overflow-hidden border-b-[6px] border-[var(--color-ink)] bg-[var(--color-blue)] md:min-h-[340px]">
+      <div className="aspect-[4/3] min-h-[200px] overflow-hidden border-b-[6px] border-[var(--color-ink)] bg-[var(--color-blue)] sm:min-h-[280px] md:min-h-[340px]">
         {project.preview.type === "iframe" ? (
           <ProjectIframe
             url={project.preview.url}
