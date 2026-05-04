@@ -1,0 +1,68 @@
+import { notFound } from "next/navigation";
+import { getDict, hasLocale, locales } from "@/lib/i18n";
+import { projects } from "@/content/projects";
+import { Hero } from "@/components/Hero";
+import { SectionHeading } from "@/components/SectionHeading";
+import { ProjectCard } from "@/components/ProjectCard";
+import { CVTimeline } from "@/components/CVTimeline";
+import { Contact } from "@/components/Contact";
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+export default async function LocaleHome({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  if (!hasLocale(locale)) notFound();
+  const dict = await getDict(locale);
+  const chronologicalProjects = [...projects].sort((a, b) => b.year - a.year);
+
+  return (
+    <>
+      <Hero dict={dict} />
+
+      <section className="brut-section px-6 py-20" id="about">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading num="01 /" label={dict.about.heading} />
+          <p className="max-w-4xl border-[6px] border-[var(--color-ink)] bg-white p-6 text-2xl font-black leading-tight shadow-[12px_12px_0_var(--color-blue)] md:text-3xl">
+            {dict.about.body}
+          </p>
+        </div>
+      </section>
+
+      <section className="brut-section px-6 py-20" id="work">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading num="02 /" label={dict.work.heading} />
+          <div className="grid gap-10 lg:grid-cols-2">
+            {chronologicalProjects.map((p) => (
+              <ProjectCard
+                key={p.id}
+                project={p}
+                locale={locale}
+                dict={dict}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="brut-section px-6 py-20" id="cv">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading num="03 /" label={dict.cv.heading} />
+          <CVTimeline locale={locale} />
+        </div>
+      </section>
+
+      <section className="brut-section px-6 py-20" id="contact">
+        <div className="mx-auto max-w-6xl">
+          <SectionHeading num="04 /" label={dict.contact.heading} />
+          <Contact dict={dict} />
+        </div>
+      </section>
+    </>
+  );
+}
