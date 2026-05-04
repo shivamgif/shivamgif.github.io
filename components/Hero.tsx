@@ -3,6 +3,8 @@
 import type { Dict } from "@/lib/i18n";
 import WallpaperPicker from "./wallpapers/WallpaperPicker";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 
 export function Hero({ dict }: { dict: Dict }) {
   return (
@@ -34,16 +36,20 @@ export function Hero({ dict }: { dict: Dict }) {
           </div>
         </div>
 
-        <div className="pointer-events-auto absolute -right-10 bottom-20 z-50 w-64 rotate-[12deg] transition-all duration-300 hover:rotate-[-8deg] hover:scale-110 md:right-10 md:bottom-10 md:w-96 lg:right-20">
+        <motion.div
+          drag
+          whileDrag={{ scale: 1.1, rotate: 0 }}
+          className="pointer-events-auto absolute -right-10 bottom-20 z-50 w-64 rotate-[12deg] cursor-grab active:cursor-grabbing md:right-10 md:bottom-10 md:w-96 lg:right-20"
+        >
           <Image
             src="/myphoto.png"
             alt="Shivam Sticker"
             width={600}
             height={600}
-            className="h-auto w-full object-contain drop-shadow-[12px_12px_0_var(--color-ink)] md:drop-shadow-[24px_24px_0_var(--color-ink)]"
+            className="pointer-events-none h-auto w-full object-contain drop-shadow-[12px_12px_0_var(--color-ink)] md:drop-shadow-[24px_24px_0_var(--color-ink)]"
             priority
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

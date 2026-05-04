@@ -7,6 +7,8 @@
   --color-blue: #12d8ff;
   --color-yellow: #ffe600;
   --color-muted: #6b6b66;
+  --color-neon-pink: #ff00ff;
+  --color-neon-lime: #39ff14;
   --font-sans: var(--font-display);
   --font-mono: var(--font-mono);
 }
@@ -44,10 +46,11 @@ body {
 }
 
 .brut-shadow-hover {
-  transition: transform 120ms ease-out, box-shadow 120ms ease-out;
+  transition: none;
 }
 
 .brut-shadow-hover:hover {
+  filter: invert(1);
   transform: translate(-4px, -4px);
   box-shadow: 14px 14px 0 var(--color-ink);
 }
@@ -73,3 +76,12 @@ body {
   background: var(--color-accent);
   color: var(--color-paper);
 }
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 10s linear infinite;
+}
+
