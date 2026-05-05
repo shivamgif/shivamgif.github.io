@@ -22,7 +22,7 @@ export function ProjectCard({
         ) : (
           // eslint-disable-next-line @next/next/no-img-element
           <img
-            src={project.preview.src}
+            src={project.preview.type === "image" ? project.preview.src : undefined}
             alt=""
             className="w-full h-full object-cover"
           />

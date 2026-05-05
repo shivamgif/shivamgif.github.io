@@ -6,8 +6,8 @@ export function Contact({ dict }: { dict: Dict }) {
     { label: "GITHUB", value: "shivamgif", href: "https://github.com/shivamgif" },
     {
       label: "LINKEDIN",
-      value: "shivam-singh-rajput-a0a6271a8",
-      href: "https://www.linkedin.com/in/shivam-singh-rajput-a0a6271a8/",
+      value: "shivamgif",
+      href: "https://www.linkedin.com/in/shivamgif/",
     },
   ];
   return (

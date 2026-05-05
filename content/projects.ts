@@ -83,7 +83,7 @@ export const projects: Project[] = [
     },
     stack: ["Next.js", "FastAPI", "PostgreSQL", "Docker", "TypeScript"],
     repo: "https://github.com/shivamgif/customplagerismcheck",
-    preview: { type: "image", src: "/previews/plagiarism.svg" },
+    preview: { type: "image", src: "/previews/plagiarism.jpg" },
     year: 2024,
   },
   {

@@ -21,6 +21,11 @@ html,
 body {
   background: var(--color-paper);
   color: var(--color-ink);
+  cursor: none;
+}
+
+*, *::before, *::after {
+  cursor: none !important;
 }
 
 body {
