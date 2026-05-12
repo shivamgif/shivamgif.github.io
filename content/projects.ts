@@ -139,7 +139,7 @@ export const projects: Project[] = [
     },
     stack: ["Unity", "C#"],
     repo: "https://github.com/shivamgif/M3-Game",
-    preview: { type: "image", src: "/previews/m3-game.svg" },
+    preview: { type: "image", src: "/previews/m3-game.png" },
     year: 2021,
   },
   {
