@@ -167,7 +167,7 @@ export const projects: Project[] = [
     },
     stack: ["JavaScript"],
     repo: "https://github.com/shivamgif/stickycartridge",
-    preview: { type: "image", src: "/previews/stickycartridge.svg" },
+    preview: { type: "image", src: "/previews/stickycartridge.png" },
     year: 2019,
   },
 ];
