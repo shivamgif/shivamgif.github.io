@@ -1,5 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
-  <rect width="800" height="500" fill="#f5f5f0"/>
-  <rect x="20" y="20" width="760" height="460" fill="none" stroke="#0a0a0a" stroke-width="6"/>
-  <text x="400" y="260" text-anchor="middle" font-family="monospace" font-size="28" fill="#0a0a0a">PREVIEW PENDING</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="ui-monospace,Menlo,monospace">
+  <rect width="800" height="600" fill="#0a0a0a"/>
+  <path d="M340 600 L390 200 L410 200 L460 600 Z" fill="#fff9df"/>
+  <g fill="#0a0a0a">
+    <rect x="392" y="240" width="16" height="50"/>
+    <rect x="394" y="340" width="14" height="50"/>
+    <rect x="396" y="440" width="12" height="50"/>
+  </g>
+  <path d="M120 600 L330 200 H300 L60 600 Z" fill="#39ff14" opacity=".5"/>
+  <path d="M680 600 L470 200 H500 L740 600 Z" fill="#39ff14" opacity=".5"/>
+  <rect x="150" y="80" width="500" height="120" fill="#39ff14" stroke="#fff9df" stroke-width="10" transform="rotate(-2 400 140)"/>
+  <text x="400" y="160" text-anchor="middle" font-size="60" font-weight="900" fill="#0a0a0a" transform="rotate(-2 400 140)">BCI RACING</text>
+  <rect x="230" y="490" width="340" height="60" fill="#ff00ff" stroke="#fff9df" stroke-width="8" transform="rotate(2 400 520)"/>
+  <text x="400" y="531" text-anchor="middle" font-size="26" font-weight="900" fill="#fff" transform="rotate(2 400 520)">UNITY · C# · EEG</text>
 </svg>

@@ -1,24 +1,38 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export function CustomCursor() {
-  const [position, setPosition] = useState({ x: -100, y: -100 });
-  const [clicked, setClicked] = useState(false);
-  const [visible, setVisible] = useState(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const dotRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-      if (!visible) setVisible(true);
-    };
-    const handleMouseDown = () => setClicked(true);
-    const handleMouseUp = () => setClicked(false);
-    
-    const handleMouseEnter = () => setVisible(true);
-    const handleMouseLeave = () => setVisible(false);
+    // Only render on devices with a precise pointer; globals.css scopes
+    // `cursor: none` to the same media query.
+    if (!window.matchMedia("(pointer: fine)").matches) return;
 
-    window.addEventListener("mousemove", handleMouseMove);
+    const wrap = wrapRef.current;
+    const dot = dotRef.current;
+    if (!wrap || !dot) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      wrap.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+      wrap.style.opacity = "1";
+    };
+    const handleMouseDown = () => {
+      dot.style.transform = "translate3d(-50%, -50%, 0) scale(0.8)";
+    };
+    const handleMouseUp = () => {
+      dot.style.transform = "translate3d(-50%, -50%, 0) scale(1)";
+    };
+    const handleMouseLeave = () => {
+      wrap.style.opacity = "0";
+    };
+    const handleMouseEnter = () => {
+      wrap.style.opacity = "1";
+    };
+
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     window.addEventListener("mousedown", handleMouseDown);
     window.addEventListener("mouseup", handleMouseUp);
     document.addEventListener("mouseenter", handleMouseEnter);
@@ -31,22 +45,22 @@ export function CustomCursor() {
       document.removeEventListener("mouseenter", handleMouseEnter);
       document.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, [visible]);
+  }, []);
 
   return (
     <div
-      className="pointer-events-none fixed top-0 left-0 z-[9999]"
-      style={{
-        transform: `translate3d(${position.x}px, ${position.y}px, 0)`,
-        opacity: visible ? 1 : 0,
-      }}
+      ref={wrapRef}
+      aria-hidden="true"
+      className="pointer-events-none fixed top-0 left-0 z-[9999] hidden [@media(pointer:fine)]:block"
+      style={{ transform: "translate3d(-100px, -100px, 0)", opacity: 0 }}
     >
       <div
+        ref={dotRef}
         className="rounded-full bg-white mix-blend-difference transition-transform duration-75 ease-out"
         style={{
           width: "100px",
           height: "100px",
-          transform: `translate3d(-50%, -50%, 0) scale(${clicked ? 0.8 : 1})`,
+          transform: "translate3d(-50%, -50%, 0) scale(1)",
         }}
       />
     </div>

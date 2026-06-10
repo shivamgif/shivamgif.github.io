@@ -21,11 +21,17 @@ html,
 body {
   background: var(--color-paper);
   color: var(--color-ink);
-  cursor: none;
 }
 
-*, *::before, *::after {
-  cursor: none !important;
+/* Hide the native cursor only where the custom one is rendered. */
+@media (pointer: fine) {
+  html,
+  body {
+    cursor: none;
+  }
+  *, *::before, *::after {
+    cursor: none !important;
+  }
 }
 
 body {
@@ -88,5 +94,16 @@ body {
 }
 .animate-marquee {
   animation: marquee 10s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+  }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 

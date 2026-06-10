@@ -1,18 +1,17 @@
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { locales, localeNames, type Locale } from "@/lib/i18n";
 
 export function LangToggle({ current }: { current: Locale }) {
-  const router = useRouter();
   const pathname = usePathname() ?? "/";
 
-  const swap = (next: Locale) => {
+  const hrefFor = (next: Locale) => {
     const re = new RegExp(`^/(${locales.join("|")})(?=/|$)`);
     const stripped = pathname.replace(re, "");
     const suffix = stripped && stripped !== "/" ? stripped : "/";
-    const target = `/${next}${suffix}`;
-    router.replace(target);
+    return `/${next}${suffix}`;
   };
 
   return (
@@ -20,10 +19,11 @@ export function LangToggle({ current }: { current: Locale }) {
       {locales.map((l) => {
         const active = l === current;
         return (
-          <button
+          <Link
             key={l}
-            onClick={() => swap(l)}
-            aria-current={active ? "true" : undefined}
+            href={hrefFor(l)}
+            replace
+            aria-current={active ? "page" : undefined}
             className={`border-[3px] border-[var(--color-ink)] px-2 py-1 ${
               active
                 ? "bg-[var(--color-ink)] text-[var(--color-paper)]"
@@ -31,7 +31,7 @@ export function LangToggle({ current }: { current: Locale }) {
             }`}
           >
             {localeNames[l]}
-          </button>
+          </Link>
         );
       })}
     </div>

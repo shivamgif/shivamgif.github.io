@@ -11,16 +11,35 @@ export function ProjectIframe({
   fallbackSrc?: string;
   blockedLabel: string;
 }) {
+  const [visible, setVisible] = useState(false);
   const [loaded, setLoaded] = useState(false);
   const [blocked, setBlocked] = useState(false);
-  const ref = useRef<HTMLIFrameElement>(null);
+  const holderRef = useRef<HTMLDivElement>(null);
+
+  // Only mount the third-party iframe once the card scrolls near the viewport.
+  useEffect(() => {
+    const el = holderRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
+    if (!visible) return;
     const t = window.setTimeout(() => {
       if (!loaded) setBlocked(true);
-    }, 3500);
+    }, 4000);
     return () => window.clearTimeout(t);
-  }, [loaded]);
+  }, [visible, loaded]);
 
   if (blocked) {
     return (
@@ -51,15 +70,17 @@ export function ProjectIframe({
   }
 
   return (
-    <iframe
-      ref={ref}
-      src={url}
-      onLoad={() => setLoaded(true)}
-      sandbox="allow-scripts allow-same-origin"
-      loading="eager"
-      referrerPolicy="no-referrer"
-      className="h-full w-full bg-white"
-      title={url}
-    />
+    <div ref={holderRef} className="h-full w-full bg-white">
+      {visible && (
+        <iframe
+          src={url}
+          onLoad={() => setLoaded(true)}
+          loading="lazy"
+          referrerPolicy="no-referrer"
+          className="h-full w-full bg-white"
+          title={`Live preview of ${url}`}
+        />
+      )}
+    </div>
   );
 }

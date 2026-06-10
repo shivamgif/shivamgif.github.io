@@ -38,14 +38,16 @@ export function Hero({ dict }: { dict: Dict }) {
 
         <motion.div
           drag
+          dragConstraints={{ left: -250, right: 120, top: -200, bottom: 120 }}
+          dragElastic={0.2}
           whileDrag={{ scale: 1.1, rotate: 0 }}
           className="pointer-events-auto absolute -right-10 bottom-20 z-50 w-64 rotate-[12deg] cursor-grab active:cursor-grabbing md:right-10 md:bottom-10 md:w-96 lg:right-20"
         >
           <Image
-            src="/myphoto.png"
-            alt="Shivam Sticker"
-            width={600}
-            height={600}
+            src="/myphoto.webp"
+            alt="Sticker-style cutout photo of Shivam"
+            width={800}
+            height={1345}
             className="pointer-events-none h-auto w-full object-contain drop-shadow-[12px_12px_0_var(--color-ink)] md:drop-shadow-[24px_24px_0_var(--color-ink)]"
             priority
           />

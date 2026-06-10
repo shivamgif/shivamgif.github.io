@@ -1,4 +1,8 @@
 {
+  "meta": {
+    "title": "Shivam Singh Rajput — Portfolio",
+    "description": "M.Sc. Informatics, RWTH Aachen. Reinforcement learning, brain-computer interfaces, full-stack engineering."
+  },
   "nav": {
     "work": "Work",
     "cv": "CV",
