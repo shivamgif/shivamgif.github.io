@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="ui-monospace,Menlo,monospace">
+  <rect width="800" height="600" fill="#fff9df"/>
+  <g transform="rotate(-4 250 380)">
+    <rect x="110" y="250" width="230" height="290" fill="#fff" stroke="#0a0a0a" stroke-width="8"/>
+    <g fill="#0a0a0a">
+      <rect x="140" y="290" width="170" height="12"/>
+      <rect x="140" y="322" width="140" height="12"/>
+      <rect x="140" y="354" width="170" height="12"/>
+      <rect x="140" y="386" width="110" height="12"/>
+      <rect x="140" y="418" width="170" height="12"/>
+    </g>
+    <circle cx="270" cy="490" r="34" fill="none" stroke="#e63946" stroke-width="8"/>
+    <text x="270" y="499" text-anchor="middle" font-size="22" font-weight="900" fill="#e63946">PDF</text>
+  </g>
+  <g transform="rotate(3 570 390)">
+    <rect x="450" y="270" width="230" height="290" fill="#12d8ff" stroke="#0a0a0a" stroke-width="8"/>
+    <g fill="#0a0a0a">
+      <rect x="480" y="310" width="170" height="12"/>
+      <rect x="480" y="342" width="120" height="12"/>
+      <rect x="480" y="374" width="170" height="12"/>
+      <rect x="480" y="406" width="150" height="12"/>
+    </g>
+  </g>
+  <rect x="90" y="70" width="620" height="130" fill="#e63946" stroke="#0a0a0a" stroke-width="10" transform="rotate(-2 400 135)"/>
+  <text x="400" y="155" text-anchor="middle" font-size="60" font-weight="900" fill="#fff" transform="rotate(-2 400 135)">INCOMINGS</text>
+  <g transform="rotate(2 400 225)">
+    <rect x="180" y="200" width="150" height="50" fill="#ffe600" stroke="#0a0a0a" stroke-width="8"/>
+    <text x="255" y="235" text-anchor="middle" font-size="24" font-weight="900" fill="#0a0a0a">RAILS</text>
+    <rect x="350" y="200" width="270" height="50" fill="#fff" stroke="#0a0a0a" stroke-width="8"/>
+    <text x="485" y="235" text-anchor="middle" font-size="24" font-weight="900" fill="#0a0a0a">TRANSCRIPTS</text>
+  </g>
+</svg>

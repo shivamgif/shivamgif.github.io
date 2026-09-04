@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="ui-monospace,Menlo,monospace">
+  <rect width="800" height="600" fill="#0a0a0a"/>
+  <g transform="rotate(-3 400 400)">
+    <rect x="230" y="250" width="340" height="300" fill="#fff9df" stroke="#fff" stroke-width="8"/>
+    <g fill="#0a0a0a">
+      <rect x="270" y="296" width="260" height="14"/>
+      <rect x="270" y="334" width="200" height="14"/>
+      <rect x="270" y="372" width="260" height="14"/>
+      <rect x="270" y="410" width="160" height="14"/>
+    </g>
+    <path d="M270 500 q30 -40 55 0 t55 0 t55 -20" fill="none" stroke="#e63946" stroke-width="8"/>
+    <rect x="270" y="520" width="220" height="8" fill="#0a0a0a"/>
+  </g>
+  <rect x="60" y="60" width="680" height="130" fill="#ffe600" stroke="#fff9df" stroke-width="10" transform="rotate(-2 400 125)"/>
+  <text x="400" y="145" text-anchor="middle" font-size="52" font-weight="900" fill="#0a0a0a" transform="rotate(-2 400 125)">LEHRNACHWEISE</text>
+  <g transform="rotate(2 400 220)">
+    <rect x="170" y="195" width="150" height="50" fill="#12d8ff" stroke="#fff9df" stroke-width="8"/>
+    <text x="245" y="230" text-anchor="middle" font-size="24" font-weight="900" fill="#0a0a0a">RAILS</text>
+    <rect x="340" y="195" width="130" height="50" fill="#ff00ff" stroke="#fff9df" stroke-width="8"/>
+    <text x="405" y="230" text-anchor="middle" font-size="24" font-weight="900" fill="#fff">AUTH</text>
+    <rect x="490" y="195" width="150" height="50" fill="#fff" stroke="#fff9df" stroke-width="8"/>
+    <text x="565" y="230" text-anchor="middle" font-size="24" font-weight="900" fill="#0a0a0a">PDF</text>
+  </g>
+</svg>

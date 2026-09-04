@@ -125,7 +125,7 @@ export const projects: Project[] = [
     },
     stack: ["Ruby on Rails", "Hotwire/Turbo", "MariaDB", "PDF Generation", "Passenger"],
     live: "https://incomings.fb4.rwth-aachen.de/",
-    preview: { type: "image", src: "/previews/_placeholder.svg" },
+    preview: { type: "image", src: "/previews/rails-incomings.svg" },
     year: 2022,
   },
   {
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     },
     stack: ["Ruby on Rails", "Hotwire/Turbo", "MariaDB", "PDF Generation", "Passenger"],
     live: "https://lehrnachweise.fb4.rwth-aachen.de/",
-    preview: { type: "image", src: "/previews/_placeholder.svg" },
+    preview: { type: "image", src: "/previews/rails-lehrnachweise.svg" },
     year: 2022,
   },
   {
