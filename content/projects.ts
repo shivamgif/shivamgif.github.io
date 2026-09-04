@@ -115,6 +115,34 @@ export const projects: Project[] = [
     year: 2023,
   },
   {
+    id: "rails-incomings",
+    title: "Incomings — Exchange Student Administration (Rails)",
+    blurb: {
+      en: "Rails app for the Dekanat of the Faculty of Mechanical Engineering, RWTH Aachen — in production since 2020. Manages exchange students, partner faculties, module mapping, language courses and exam results, and generates the official PDF transcripts the faculty issues to the students' home universities.",
+      de: "Rails-Anwendung für das Dekanat der Fakultät für Maschinenwesen, RWTH Aachen — seit 2020 im Produktivbetrieb. Verwaltet Austauschstudierende, Partnerfakultäten, Modulzuordnung, Sprachkurse und Prüfungsergebnisse und erzeugt die offiziellen PDF-Transcripts, die die Fakultät den Heimathochschulen ausstellt.",
+      hi: "RWTH Aachen की मैकेनिकल इंजीनियरिंग संकाय के डीन कार्यालय हेतु Rails ऐप — 2020 से प्रोडक्शन में। एक्सचेंज छात्र, साझेदार संकाय, मॉड्यूल मैपिंग, भाषा पाठ्यक्रम व परीक्षा परिणाम संभालता है और गृह विश्वविद्यालयों के लिए आधिकारिक PDF ट्रांसक्रिप्ट बनाता है।",
+      it: "App Rails per il Decanato della Facoltà di Ingegneria Meccanica, RWTH Aachen — in produzione dal 2020. Gestisce studenti in scambio, facoltà partner, mappatura dei moduli, corsi di lingua e risultati d'esame, e genera i transcript PDF ufficiali che la facoltà rilascia alle università di provenienza.",
+    },
+    stack: ["Ruby on Rails", "Hotwire/Turbo", "MariaDB", "PDF Generation", "Passenger"],
+    live: "https://incomings.fb4.rwth-aachen.de/",
+    preview: { type: "image", src: "/previews/_placeholder.svg" },
+    year: 2022,
+  },
+  {
+    id: "rails-lehrnachweise",
+    title: "Lehrnachweise — Teaching Record Certificates (Rails)",
+    blurb: {
+      en: "Rails app for the same faculty, also still in production. Professors capture their teaching records and generate their official PDF Lehrnachweis certificate; includes user management and authentication.",
+      de: "Rails-Anwendung für dieselbe Fakultät, ebenfalls weiterhin im Produktivbetrieb. Professor:innen erfassen ihre Lehrleistungen und erzeugen ihre offizielle PDF-Lehrnachweis-Bescheinigung; inkl. Benutzerverwaltung und Authentifizierung.",
+      hi: "उसी संकाय के लिए Rails ऐप, आज भी प्रोडक्शन में। प्रोफ़ेसर अपनी शिक्षण गतिविधियाँ दर्ज कर आधिकारिक PDF Lehrnachweis प्रमाणपत्र बनाते हैं; उपयोगकर्ता प्रबंधन व प्रमाणीकरण सहित।",
+      it: "App Rails per la stessa facoltà, anch'essa ancora in produzione. I professori registrano la loro attività didattica e generano il certificato PDF Lehrnachweis ufficiale; include gestione utenti e autenticazione.",
+    },
+    stack: ["Ruby on Rails", "Hotwire/Turbo", "MariaDB", "PDF Generation", "Passenger"],
+    live: "https://lehrnachweise.fb4.rwth-aachen.de/",
+    preview: { type: "image", src: "/previews/_placeholder.svg" },
+    year: 2022,
+  },
+  {
     id: "ios-todo",
     title: "iOS Todo App",
     blurb: {
