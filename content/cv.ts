@@ -160,7 +160,12 @@ export const cv: CVEntry[] = [
       it: "App web Ruby on Rails",
     },
     org: "Dekanat MWMB, RWTH Aachen",
-    detail: { en: "", de: "", hi: "", it: "" },
+    detail: {
+      en: "Two Rails apps for the Faculty of Mechanical Engineering — both still in production. Incomings — exchange students, partner faculties, module mapping, language courses, exam results; PDF transcripts as official records for the home universities. Lehrnachweise — PDF teaching-record certificates for the faculty's professors; user management and authentication.",
+      de: "Zwei Rails-Anwendungen für die Fakultät für Maschinenwesen — beide bis heute im Produktivbetrieb. Incomings — Austauschstudierende, Partnerfakultäten, Modulzuordnung, Sprachkurse, Prüfungsergebnisse; PDF-Transcripts als offizielle Leistungsnachweise für die Heimathochschulen. Lehrnachweise — PDF-Lehrnachweis-Bescheinigungen für Professor:innen der Fakultät; Benutzerverwaltung und Authentifizierung.",
+      hi: "मैकेनिकल इंजीनियरिंग संकाय के लिए दो Rails ऐप्लिकेशन — दोनों आज भी प्रोडक्शन में। Incomings — एक्सचेंज छात्र, साझेदार संकाय, मॉड्यूल मैपिंग, भाषा पाठ्यक्रम, परीक्षा परिणाम; गृह विश्वविद्यालयों हेतु आधिकारिक PDF ट्रांसक्रिप्ट। Lehrnachweise — संकाय के प्रोफ़ेसरों के लिए PDF शिक्षण-प्रमाणपत्र; उपयोगकर्ता प्रबंधन व प्रमाणीकरण।",
+      it: "Due applicazioni Rails per la Facoltà di Ingegneria Meccanica — entrambe tuttora in produzione. Incomings — studenti in scambio, facoltà partner, mappatura dei moduli, corsi di lingua, risultati d'esame; transcript PDF come certificati ufficiali per le università di provenienza. Lehrnachweise — certificati PDF di attività didattica per i professori della facoltà; gestione utenti e autenticazione.",
+    },
   },
   {
     id: "bsc",
